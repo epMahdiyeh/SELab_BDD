@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: calculator.RunnerTest
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 16, Time elapsed: 0.496 s - in calculator.RunnerTest
