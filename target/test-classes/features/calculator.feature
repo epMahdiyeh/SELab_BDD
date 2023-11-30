@@ -1,13 +1,19 @@
 @tag
 Feature: Calculator
 
-  Scenario Outline: add two numbers
-    Given Two input values, <first> and <second>
-    When I add the two values
-    Then I expect the result <result>
+Scenario: calculate square root of a divided by b
+Given Two input values, 4 and 1
+When I calculate the square root of a divided by b
+Then I expect the result to be 7
 
-    Examples:
-      | first | second | result |
-      | 1     | 12     | 13     |
-      | -1    | 6      | 5  	    |
-      | 2     | 2      | 4	    |
+Scenario Outline: calculate square root of a divided by b
+Given Two input values, <a> and <b>
+When I calculate the square root of a divided by b
+Then I expect the result to be <result>
+
+Examples:
+| a | b | result |
+| 4 | 1 | 2      |
+| 36| 4 | 3      |
+| 32| 2 | 4      |
+| 72| 8 | 3      |

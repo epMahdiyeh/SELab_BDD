@@ -1,16 +1,15 @@
 package calculator;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
 public class MyStepdefs {
     private Calculator calculator;
-    private int value1;
-    private int value2;
-    private int result;
+    private int a;
+    private int b;
+    private double result;
 
     @Before
     public void before() {
@@ -18,20 +17,18 @@ public class MyStepdefs {
     }
 
     @Given("Two input values, {int} and {int}")
-    public void two_input_values_and(int arg0, int arg1) {
-        value1 = arg0;
-        value2 = arg1;
+    public void twoInputValues(int value1, int value2) {
+        a = value1;
+        b = value2;
     }
 
-
-    @When("I add the two values")
-    public void i_add_the_two_values() {
-        result = calculator.add(value1, value2);
-        System.out.print(result);
+    @When("I calculate the square root of a divided by b")
+    public void calculateSquareRoot() {
+        result = calculator.calculateSquareRoot(a, b);
     }
 
-    @Then("I expect the result {int}")
-    public void i_expect_the_result(int arg0) {
-        Assert.assertEquals(arg0, result);
+    @Then("I expect the result to be {double}")
+    public void expectResult(double expectedResult) {
+        Assert.assertEquals(expectedResult, result, 0.001);
     }
 }
