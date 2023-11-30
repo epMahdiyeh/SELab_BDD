@@ -1,4 +1,5 @@
 package calculator;
+
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -32,3 +33,4 @@ public class MyStepdefs {
         Assert.assertEquals(expectedResult, result, 0.001);
     }
 }
+
